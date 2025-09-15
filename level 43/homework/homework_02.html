@@ -1,0 +1,55 @@
+<!-- დავალება 2:
+
+შექმენით HTML ფაილი, რომელშიც გამოიყენებთ შემდეგ CSS სელექტორებს:
+
+ID სელექტორი (მაგალითად #header).
+
+Class სელექტორი (მაგალითად .content).
+
+Element სელექტორი (მაგალითად div).
+
+დააკონფიგურირეთ სტილი თითოეულ სელექტორზე.
+
+შეამოწმეთ, რომ ID სელექტორი ყველაზე მაღალი პრიორიტეტით მუშაობს, რადგან სხვა სტილები (მაგალითად კლასები და ელემენტები) არ აფუჭებენ მას. -->
+
+
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS პრიორიტეტი</title>
+  <style>
+    /* Element სელექტორი */
+    div {
+      color: black;
+      font-size: 18px;
+    }
+
+    /* Class სელექტორი */
+    .content {
+      color: green;
+      font-weight: bold;
+    }
+
+    /* ID სელექტორი */
+    #header {
+      color: blue;
+      font-size: 22px;
+    }
+  </style>
+</head>
+<body>
+  <div class="content" id="header">
+    ეს ტექსტი ერთდროულად არის <b>div</b>, აქვს <b>class="content"</b> და <b>id="header"</b>.  
+    ამიტომ, საბოლოოდ ID სელექტორი მუშაობს (ლურჯი ტექსტი, underline).
+  </div>
+
+  <div class="content">
+    ეს მხოლოდ div + class-ია, აქ class-ს აქვს უფრო მაღალი პრიორიტეტი ვიდრე div-ს → მწვანე ტექსტი.
+  </div>
+
+  <div>
+    ეს უბრალო div-ია, ამიტომ მოქმედებს მხოლოდ element selector → შავი ტექსტი.
+  </div>
+</body>
+</html>

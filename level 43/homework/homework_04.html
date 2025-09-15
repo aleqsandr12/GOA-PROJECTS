@@ -1,0 +1,64 @@
+<!-- დავალება 4:
+
+შექმენით HTML გვერდი, სადაც რამდენიმე div ელემენტია.
+
+შექმენით CSS, სადაც გამოიყენებთ:
+
+Inline style (დაპირებული სტილი პირდაპირ HTML-ში).
+
+ID სელექტორები (მაგალითად #main, #footer).
+
+Class სელექტორები (მაგალითად .container, .highlight).
+
+შეამოწმეთ, რომ Inline style აქვს ყველაზე მაღალი პრიორიტეტი. -->
+
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS პრიორიტეტი - Inline, ID, Class</title>
+  <style>
+    /* Class სელექტორები */
+    .container {
+      background-color: lightgray;
+      padding: 10px;
+      color: green;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: orange;
+    }
+
+    /* ID სელექტორები */
+    #main {
+      background-color: lightblue;
+      color: blue;
+      padding: 15px;
+    }
+
+    #footer {
+      background-color: lightcoral;
+      color: red;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Inline style აქვს ყველაზე მაღალი პრიორიტეტი -->
+  <div class="container highlight" id="main" style="color: purple; background-color: yellow;">
+    ეს div-ს აქვს inline style, ID (#main) და Class (.container .highlight). 
+    საბოლოოდ ტექსტი იქნება Purple, ფონური ფერი Yellow, inline style-ის გამო.
+  </div>
+
+  <div class="container highlight" id="footer">
+    ეს div-ს აქვს ID (#footer) და Class (.container .highlight). 
+    ტექსტი იქნება Red, ფონური ფერი lightcoral (ID სელექტორის გამო).
+  </div>
+
+  <div class="container highlight">
+    ეს div-ს აქვს მხოლოდ Class (.container .highlight). 
+    ტექსტი იქნება Orange, ფონური ფერი lightgray (Class სელექტორის გამო).
+  </div>
+</body>
+</html>
